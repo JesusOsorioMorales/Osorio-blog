@@ -1,7 +1,7 @@
 <?php
     require_once(__DIR__ . "/../model/database.php");
     
-    $connection = new mysqli  ($host, $username, $password);
+    $connection = new mysqli ($host, $username, $password);
     
     if($connection->connect_error) {
         die("<p>Error: " . $connection->connect_error . "</p>");
@@ -10,7 +10,7 @@
     $exist = $connection->select_db($database);
     
     if (!$exists) {
-        $query = $connection->quary("CREATE DATABASE $database");
+        $query = $connection->query("CREATE DATABASE $database");
         
         if ($query) {
             echo"<p>Successfully created database:  " . $database . "</p>";
