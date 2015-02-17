@@ -1,7 +1,7 @@
 <?php
     require_once(__DIR__ . "/../model/database.php");
-    
-    $connection = new mysqli ($host, $username, $password);
+
+    $connection = new mysqli($host, $username, $password);
     
     if($connection->connect_error) {
         die("<p>Error: " . $connection->connect_error . "</p>");
@@ -9,7 +9,7 @@
     
     $exist = $connection->select_db($database);
     
-    if (!$exists) {
+    if (!$exist) {
         $query = $connection->query("CREATE DATABASE $database");
         
         if ($query) {
@@ -30,7 +30,7 @@
         echo"<p>Succesfully create table: posts</p>";
     }
     else {
-        echo "<p>$connection->>error</p>";
+        echo "<p>$connection->error</p>";
     }
     
     $connection->close();
