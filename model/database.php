@@ -5,20 +5,33 @@ class database {
     private $username;
     private $password;
     private $database;
+    private $error;
     
     public function __construct($host, $username, $password, $database) {
         $this->host = $host;
         $this->username = $username;
         $this->password = $password;
         $this->database = $$database;
-    }
     
-    public function openConnection() {
-        $this->connection = new mysquli($this->host, $this->username, $this->password, $database->database);;
+    
+    //public function openConnection() {
+        
+        $this->connection = new mysquli($host, $username, $password);// $database->database);
                 
                 if($this->connection->connect_error) {
-                    die("<p>Error: " . $connection->connect_error . "</p>");
+                    die("<p>Error: " . $this->connection->connect_error . "</p>");
                 }
+                
+                  if (!$exist) {
+        $query = $this->connection->query("CREATE DATABASE $database");
+        
+        if ($query) {
+            echo"<p>Successfully created database:  " . $database . "</p>";
+        }
+    }
+    else {
+        echo "Database already exists";
+    }
                 
     }
     
@@ -31,7 +44,11 @@ class database {
     public function query($string) {
         $this->openConnection();
         
-        $query = $this->coonnection->query();
+        $query = $this->connection->query();
+        
+        if(!query) {
+            $this->error = $this->connection->error;
+        }
         
         $this->closeConnnetion();
         
