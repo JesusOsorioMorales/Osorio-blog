@@ -8,10 +8,3 @@
     echo "<p>Post: $post</p>";
     
     $query = $connnection->query("INSSERT INTO posts SET title = 'title', post = '$post'");
-    
-    if($query) {
-       echo"<p>Successfully inserted post: $title</p>"; 
-    }
-    else {
-        echo "<p>connection->error</p>";
-    }
