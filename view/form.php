@@ -13,7 +13,7 @@ require_once(__DIR__ . "/../model/config.php");
 
     <div>
         <label for="host">Post: </label>
-        <textarea name="post"></textarea>
+        <textarea type="text" name="post"></textarea>
     </div>
 
     <div>

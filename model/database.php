@@ -61,7 +61,7 @@ class database {
             $this->error = $this->connection->error;
         }
 
-        $this->closeConnnetion();
+      //  $this->closeConnnetion();
 
         return $query;
     }

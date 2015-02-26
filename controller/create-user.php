@@ -15,7 +15,7 @@
             ."password = '$hashedPassword',"
             ."salt = '$salt',");
     
-    if(query) {
+    if('query') {
         echo "Succesfully created user: $username";
     }
     else {

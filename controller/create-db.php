@@ -3,9 +3,9 @@
 require_once(__DIR__ . "/../model/database.php");
 
 $query = $_SESSION["connection"]->query("CREATE TABLE posts ("
-        . "idint(11) NOT NULL AUTO_INCREMENT,"
-        . "title varcher (255 NOT NULL,"
-        . "post text NOT NULLL,"
+        . "id int(11) NOT NULL AUTO_INCREMENT,"
+        . "title varchar (255) NOT NULL,"
+        . "post text NOT NULL,"
         . "PRIMARY KEY (id))");
 
     if ($query) {
@@ -15,12 +15,12 @@ $query = $_SESSION["connection"]->query("CREATE TABLE posts ("
         echo"<p>" . $_SESSION["connection"]->error . "</p>";
     }
     
-    $query = $_SESSION["connection"]->query("CREATE TABLE users {"
+    $query = $_SESSION["connection"]->query("CREATE TABLE users ("
            . "id int(11) NOT NULL AUTO_INCREMENT,"
-            . "username varcher(30) NOT NULL,"
-            . "email varcher(50) NOT NULL,"
+            . "username varchar(30) NOT NULL,"
+            . "email varchar(50) NOT NULL,"
             . "password char(128) NOT NULL,"
-            . "salt char(128)NOT NULL,"
+            . "salt char(128) NOT NULL,"
             . "PRIMARY KEY(id))");
     
     if($query) {
