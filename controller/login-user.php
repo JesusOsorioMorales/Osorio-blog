@@ -4,7 +4,7 @@
     $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
     
-    $query = $_SESSION["connection"]->query("SELECT salt, password FROM users WHHERE username = '$username");
+    $query = $_SESSION["connection"]->query("SELECT salt, password FROM users WHERE username = '$username'");
 
     
     if($query->num_rows == 1) {
@@ -15,9 +15,9 @@
             echo "<p>Login Successful!</p>";
         }
         else {
-            echo "<p>Invalid username and password</p>";
+            echo "<p>Invalid username and password1</p>";
         }
     }
     else {
-            echo "<p>Invalid username and password</p>";
+            echo "<p>Invalid username and password2</p>";
         }
